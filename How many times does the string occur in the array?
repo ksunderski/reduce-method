@@ -1,0 +1,11 @@
+function countEachEl(arr) {
+  if(!arr.length) return 'Array is empty';
+  
+  const count = arr.reduce((acc, arr) => {
+  acc[arr] = (acc[arr] || 0) + 1;           // Update the count for the current element
+  return acc;                               // Pass the updated accumulator to the next iteration
+}, {});                                     // Start with an empty object
+
+
+  return count;
+}
