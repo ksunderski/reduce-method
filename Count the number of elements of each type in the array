@@ -1,0 +1,15 @@
+function countEachType(arr){
+  if(!arr.length) return 'Array is empty';
+  
+
+  const result = arr.reduce((acc, num) => {
+     acc[typeof num] = (acc[typeof num] || 0) + 1
+     return acc;
+    
+  }, { 'number': 0,
+       'string': 0,
+       'boolean': 0 
+               })                                       //initial value already has keys and values 
+
+  return result;
+}
