@@ -1,0 +1,16 @@
+function elementListByType(arr){
+ const result = arr.reduce((acc, num) => {
+   const type = typeof num
+   if(['boolean', 'string', 'number'].includes(type)){
+     acc[type] +=  (acc[type]? ' ' : '') + num;
+     }
+  return acc;
+    
+  }, {number: "",
+      string: "",
+      boolean: ""});
+  return result;
+}
+
+//elementListByType([1, 2, 3, "a", "b", "c", true, false]) should return {number: "1 2 3", string: "a b c", boolean: "true false"}
+//elementListByType([NaN, "", null, 2<1]) should return {number: "NaN", string: "", boolean: "false"}
